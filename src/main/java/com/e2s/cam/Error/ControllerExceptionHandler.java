@@ -31,13 +31,13 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
 		return new ResponseEntity<ErrorMessage>(message, HttpStatus.NOT_FOUND);
 	}
-//	@ExceptionHandler(Exception.class)
-//	public ResponseEntity<ErrorMessage> exception(Exception ex, WebRequest request) {
-//		List<String> schemas=new ArrayList<>();
-//		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
-//			ErrorMessage message = new ErrorMessage(schemas,"Unexpected condition encountered while processing your request. Please try again later or contact support.",HttpStatus.INTERNAL_SERVER_ERROR.value());
-//
-//		return new ResponseEntity<ErrorMessage>(message, HttpStatus.INTERNAL_SERVER_ERROR);
-//	}
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorMessage> exception(Exception ex, WebRequest request) {
+		List<String> schemas=new ArrayList<>();
+		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
+			ErrorMessage message = new ErrorMessage(schemas,"Unexpected condition encountered while processing your request. Please try again later or contact support.",HttpStatus.INTERNAL_SERVER_ERROR.value());
+
+		return new ResponseEntity<ErrorMessage>(message, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 
 }
