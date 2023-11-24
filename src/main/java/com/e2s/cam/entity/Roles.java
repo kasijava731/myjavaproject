@@ -13,11 +13,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "roles")
 public class Roles {
-	@Id
-	@Column(name = "id")
-	private Long roleId;
+    @Id 
+    @Column(name = "id")
+	private Long groupId;
 	@Column(name = "name")
-	private String name;
+	private String groupName;
 	@Column(name = "created_at")
 	private Long createdAt;
 	@Column(name = "updated_at")

@@ -1,5 +1,7 @@
 package com.e2s.cam.userentity;
 
+import org.hibernate.annotations.ForeignKey;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

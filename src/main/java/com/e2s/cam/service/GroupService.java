@@ -50,7 +50,7 @@ public class GroupService {
 	private UserRepository userRepository;
 
 	public GroupResponse getById(Long groupId) {
-		Roles roleDetails = roleRepository.findByRoleId(groupId);
+		Roles roleDetails = roleRepository.findByGroupId(groupId);
 		if (Objects.equals(roleDetails, null)) {
 			throw new UserNotFoundException("Invalid Group ID. Please check and try again.");
 		}
@@ -102,14 +102,14 @@ public class GroupService {
 			}
 		}
 		listOfUserResponse.setResource(allUserDetails);
-		listOfUserResponse.setStartIndex(roleDetails.getNumber());
+		listOfUserResponse.setStartIndex(roleDetails.getNumber()+1);
 		listOfUserResponse.setTotalResults(roleDetails.getTotalElements());
 		listOfUserResponse.setItemsPerPage(roleDetails.getSize());
 		return listOfUserResponse;
 	}
 
 	public GroupResponse constructResponse(Roles roles, boolean isGetAll) {
-		Long id = roles.getRoleId();
+		Long id = roles.getGroupId();
 		GroupResponse response = new GroupResponse();
 		List<GroupEntity> groupDetails = groupRepository.findAllById(id);
 		List<Member> members = new ArrayList<>();
@@ -132,7 +132,7 @@ public class GroupService {
 		meta.setLastModified(updatedAt.toString());
 		meta.setResourceType("Group");
 		response.setMeta(meta);
-		response.setDisplayName(roles.getName());
+		response.setDisplayName(roles.getGroupName());
 		response.setMembers(members);
 		return response;
 	}

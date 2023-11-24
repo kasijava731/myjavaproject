@@ -9,6 +9,6 @@ import com.e2s.cam.entity.Roles;
 @Repository
 public interface RoleRepository extends JpaRepository<Roles, Long>,JpaSpecificationExecutor<Roles> {
 	
-	Roles findByRoleId(Long id);
+	Roles findByGroupId(Long id);
 
 }

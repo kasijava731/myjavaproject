@@ -28,7 +28,6 @@ public class GroupController {
 	@PostMapping("/info")
     @SCIMAuthorization
 	public Object getGroupById(@RequestBody Request request) {
-		logger.info("test001");
 		GroupResponse result = service.getById(Long.valueOf(request.getGroupId()));
 		return result;
 	}

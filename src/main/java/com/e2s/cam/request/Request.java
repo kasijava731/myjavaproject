@@ -2,21 +2,30 @@ package com.e2s.cam.request;
 
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Getter
-@Setter
+
+
+
 public class Request {
 
 	private String userId;
-	private List<Operation> operations;
+	@JsonProperty("Operations")
+	private List<Operation> Operations;
 	private String filter;
 	private int startIndex;
 	private int itemsPerPage;
 	private String ascOrderBy;
 	private String descOrderBy;
 	private String groupId;
+
+	public List<Operation> getOperations() {
+		return Operations;
+	}
+
+	public void setOperations(List<Operation> operations) {
+		Operations = operations;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -26,13 +35,7 @@ public class Request {
 		this.userId = userId;
 	}
 
-	public List<Operation> getOperations() {
-		return operations;
-	}
-
-	public void setOperations(List<Operation> operations) {
-		this.operations = operations;
-	}
+	
 
 	public String getFilter() {
 		return filter;

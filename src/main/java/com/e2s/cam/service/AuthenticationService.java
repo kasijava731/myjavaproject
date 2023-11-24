@@ -218,7 +218,7 @@ public class AuthenticationService {
 			e = checkAccountAndAuthorizationHeader(request, authorizationHeader, reqParams);
 		}
 		if (e != null) {
-			throw new UnAuthorizedException(e.getMessage());
+			return e;
 		} else {
 			joinPointResult = joinPoint.proceed();
 			return joinPointResult;

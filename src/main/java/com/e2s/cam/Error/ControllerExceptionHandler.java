@@ -14,15 +14,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
-//	@ExceptionHandler(UnAuthorizedException.class)
-//	public ResponseEntity<ErrorMessage> unAuthorizedException(UnAuthorizedException ex, WebRequest request) {
-//		List<String> schemas=new ArrayList<>();
-//		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
-//			ErrorMessage message = new ErrorMessage(schemas,ex.getMessage(),HttpStatus.UNAUTHORIZED.value());
-//
-//		return new ResponseEntity<ErrorMessage>(message, HttpStatus.UNAUTHORIZED);
-//	}
-//	
+	@ExceptionHandler(UnAuthorizedException.class)
+	public ResponseEntity<ErrorMessage> unAuthorizedException(UnAuthorizedException ex, WebRequest request) {
+		List<String> schemas=new ArrayList<>();
+		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
+			ErrorMessage message = new ErrorMessage(schemas,ex.getMessage(),HttpStatus.UNAUTHORIZED.value());
+
+		return new ResponseEntity<ErrorMessage>(message, HttpStatus.UNAUTHORIZED);
+	}
+	
 	@ExceptionHandler(UserNotFoundException.class)
 	public ResponseEntity<ErrorMessage> userNotFoundException(UserNotFoundException ex, WebRequest request) {
 		List<String> schemas=new ArrayList<>();

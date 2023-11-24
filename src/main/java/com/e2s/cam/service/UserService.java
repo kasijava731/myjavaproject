@@ -17,10 +17,12 @@ import org.springframework.stereotype.Service;
 
 import com.e2s.cam.Error.UserNotFoundException;
 import com.e2s.cam.entity.CommunityUserProfiles;
+import com.e2s.cam.entity.GroupDetails;
 import com.e2s.cam.entity.GroupEntity;
 import com.e2s.cam.entity.Staff;
 import com.e2s.cam.entity.UserEntity;
 import com.e2s.cam.repository.CommunityUserProfilesRepository;
+import com.e2s.cam.repository.GroupDetailsRepository;
 import com.e2s.cam.repository.GroupRepository;
 import com.e2s.cam.repository.StaffRepository;
 import com.e2s.cam.repository.UserRepository;
@@ -39,6 +41,9 @@ public class UserService {
 	private UserRepository userRepository;
 	@Autowired
 	private GroupRepository groupRepository;
+	@Autowired
+	private GroupDetailsRepository groupDetailsRepository;
+
 	@Autowired
 	private StaffRepository staffRepository;
 
@@ -108,40 +113,48 @@ public class UserService {
 			}
 		}
 		listOfUserResponse.setResource(allUserDetails);
-		listOfUserResponse.setStartIndex(userDetails.getNumber());
+		listOfUserResponse.setStartIndex(userDetails.getNumber()+1);
 		listOfUserResponse.setTotalResults(userDetails.getTotalElements());
 		listOfUserResponse.setItemsPerPage(userDetails.getSize());
 		return listOfUserResponse;
 	}
 
 	public User updateByStaffId(String staffId, String Status) {
-		System.out.print("status "+Status);
+		System.out.println("status "+Status);
 		UserEntity userDetails = userRepository.findByStaffId(staffId);
 		if (Objects.equals(userDetails, null)) {
 			throw new UserNotFoundException("Invalid User ID. Please check and try again.");
 		}
 		Long id=Long.valueOf(userDetails.getUserId());
+		System.out.println("userId "+Status);
 		Staff staff = staffRepository.findByStaffId(staffId);
+		System.out.println("staff "+staff);
 		CommunityUserProfiles communityUserProfiles = communityUserProfilesRepository.findByUserId(userDetails.getUserId());
+		System.out.println("CommunityUserProfiles "+staff);
 		Users authuser=usersRepository.findByIdAndOrganizationId(id, 76l);
 		if (!Objects.equals(getStatus(Status), null)) {
 			staff.setStatus(getStatus(Status));
 			communityUserProfiles.setStatus(getStatus(Status));
 			authuser.setStatus(getStatus(Status));
 		}
+		System.out.println("CommunityUserProfiles "+staff);
 		staffRepository.save(staff);
+		System.out.println("staff saves "+staff);
 		communityUserProfilesRepository.save(communityUserProfiles);
-		usersRepository.save(authuser);
+		System.out.println("comm saves "+staff);
+		usersRepository.updateName(76L,id,getStatus(Status));
+		System.out.println("users saves "+staff);
 		return constructResponse(userDetails);
 
 	}
 
 	public User constructResponse(UserEntity userDetails) {
 		String userId = userDetails.getUserId();
-		List<GroupEntity> groupDetails = groupRepository.findAllByUserId(userId);
+		List<GroupDetails> groupDetails = groupDetailsRepository.findAllByUserId(userId);
 		List<Groups> groups = new ArrayList<>();
-		for (GroupEntity group : groupDetails) {
+		for (GroupDetails group : groupDetails) {
 			Groups groupDetail = new Groups();
+			System.out.println(group.getName());
 			groupDetail.setDisplay(group.getName());
 			groupDetail.setValue(group.getId().toString());
 			groupDetail.setSref("");
@@ -213,7 +226,9 @@ public class UserService {
 		if (sort == null) {
 			sort = Sort.by("id").ascending(); // You can change the field as per your requirement
 		}
-
+		if(startIndex!=0) {
+			startIndex=startIndex-1;
+		}
 		return PageRequest.of(startIndex, itemsPerPage, sort);
 	}
 
