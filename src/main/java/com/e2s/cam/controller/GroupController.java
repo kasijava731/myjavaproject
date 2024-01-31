@@ -28,27 +28,29 @@ public class GroupController {
 	@PostMapping("/info")
     @SCIMAuthorization
 	public Object getGroupById(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		GroupResponse result = service.getById(Long.valueOf(request.getGroupId()));
 		return result;
 	}
 
 	@PostMapping("/findbycriteria")
 	@SCIMAuthorization
-	public Object getAllUsers(@RequestBody Request request) {
-		ListResponse result = service.getAllGroups(request.getFilter(), request.getStartIndex(),
-				request.getItemsPerPage(), request.getAscOrderBy(), request.getDescOrderBy());
+	public Object getAllUsers(@RequestBody(required = false) Request request) {
+		ListResponse result = service.getAllGroups(request);
 		return result;
 	}
 
 	@PostMapping("/update")
 	@SCIMAuthorization
 	public void updateUsers(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		service.updateById(request.getGroupId(), request.getOperations().get(0));
 	}
 
 	@PostMapping("/remove")
 	@SCIMAuthorization
 	public void removegroup(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		service.removeGroup(request.getGroupId());
 	}
 	

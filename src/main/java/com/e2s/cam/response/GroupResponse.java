@@ -16,6 +16,7 @@ public class GroupResponse {
     
 	{
 		schemas.add("urn:ietf:params:scim:schemas:core:2.0:Group");
+		schemas.add("urn:ietf:params:scim:schemas:extension:cam:2.0:Group");
 	}    
 
 	public List<String> getSchemas() {
@@ -56,7 +57,7 @@ public class GroupResponse {
 	} 
 	@JsonProperty("urn:ietf:params:scim:schemas:extension:cam:2.0:Group")
 	public GroupExtension getExtension() {
-		return extension;
+		return new GroupExtension("");
 	}
 
 	public void setExtension(GroupExtension extension) {

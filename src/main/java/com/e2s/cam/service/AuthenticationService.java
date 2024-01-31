@@ -73,11 +73,14 @@ public class AuthenticationService {
 	}
 
 	public static String generateAuthToken(String httpMethod1, String url, Map<String, String> params,HttpServletRequest request) {
-		String httpMethod = httpMethod1.toUpperCase();
-		String protocol = request.getScheme().toLowerCase();
-		String hostName = request.getServerName().toLowerCase();
-		String hostPort = request.getServerPort() + "";
-		hostName = hostPort == "80" ? hostName : String.format("%s:%s", hostName, hostPort); 
+		
+		String httpMethod = request.getMethod().toUpperCase();
+//		String protocol = request.getScheme().toLowerCase();
+		String hostName = "cam-uat.engage2serve.com";
+//		String hostPort = request.getServerPort() + "";
+		String protocol = "https";
+		String hostPort =  "443";
+//		hostName = hostPort == "80" ? hostName : String.format("%s:%s", hostName, hostPort); 
 		String requestURI = url.toLowerCase();
 		AuthenticationService authenticationService=new AuthenticationService();
 		String parameters = authenticationService.constructAndSortParam(params);
@@ -124,6 +127,7 @@ public class AuthenticationService {
 			Map<String, String> requestParams) {
 		System.out.println("inside validation ");
 		String accountId = requestParams.get("accountid");
+		System.out.println("test 0000000001");
 		if (!accountId.equalsIgnoreCase("123456")) {
 			throw new UnAuthorizedException("Invalid account");
 		}

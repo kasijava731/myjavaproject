@@ -9,5 +9,16 @@ public class GroupExtension {
 
 	public void setGroupAccessRightInfo(String groupAccessRightInfo) {
 		this.groupAccessRightInfo = groupAccessRightInfo;
+	}
+
+	public GroupExtension(String groupAccessRightInfo) {
+		super();
+		this.groupAccessRightInfo = groupAccessRightInfo;
+	}
+
+	public GroupExtension() {
+		super();
 	}	
+	
+	
 }

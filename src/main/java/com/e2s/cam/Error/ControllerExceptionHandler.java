@@ -3,6 +3,8 @@ package com.e2s.cam.Error;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -10,17 +12,20 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.e2s.cam.controller.GroupController;
+
 
 @ControllerAdvice
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
+	private static final Logger logger = LogManager.getLogger(ControllerExceptionHandler.class);
+
 
 	@ExceptionHandler(UnAuthorizedException.class)
 	public ResponseEntity<ErrorMessage> unAuthorizedException(UnAuthorizedException ex, WebRequest request) {
 		List<String> schemas=new ArrayList<>();
 		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
 			ErrorMessage message = new ErrorMessage(schemas,ex.getMessage(),HttpStatus.UNAUTHORIZED.value());
-
-		return new ResponseEntity<ErrorMessage>(message, HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<ErrorMessage>(message, HttpStatus.UNAUTHORIZED);
 	}
 	
 	@ExceptionHandler(UserNotFoundException.class)
@@ -36,7 +41,7 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 		List<String> schemas=new ArrayList<>();
 		schemas.add("urn:ietf:params:scim:api:messages:2.0:Error");
 			ErrorMessage message = new ErrorMessage(schemas,"Unexpected condition encountered while processing your request. Please try again later or contact support.",HttpStatus.INTERNAL_SERVER_ERROR.value());
-
+			logger.info(" exception code 500  " + ex.getMessage());
 		return new ResponseEntity<ErrorMessage>(message, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 

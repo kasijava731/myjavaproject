@@ -3,12 +3,12 @@ public class UserEnterprise {
 	String organization;
 	String division;
 	String department;
-	Groups manager;
+	Manager manager;
 	
-	public Groups getManager() {
+	public Manager getManager() {
 		return manager;
 	}
-	public void setManager(Groups manager) {
+	public void setManager(Manager manager) {
 		this.manager = manager;
 	}
 	public String getOrganization() {
@@ -28,6 +28,16 @@ public class UserEnterprise {
 	}
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+	public UserEnterprise(String organization, String division, String department, Manager manager) {
+		super();
+		this.organization = organization;
+		this.division = division;
+		this.department = department;
+		this.manager = manager;
+	}
+	public UserEnterprise() {
+		super();
 	}	
 	
 }

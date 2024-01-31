@@ -84,4 +84,13 @@ public class Request {
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}
+
+	@Override
+	public String toString() {
+		return "Request [userId=" + userId + ", Operations=" + Operations + ", filter=" + filter + ", startIndex="
+				+ startIndex + ", itemsPerPage=" + itemsPerPage + ", ascOrderBy=" + ascOrderBy + ", descOrderBy="
+				+ descOrderBy + ", groupId=" + groupId + "]";
+	}
+	
+	
 }

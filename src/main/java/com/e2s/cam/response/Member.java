@@ -14,7 +14,7 @@ public class Member {
 	private String type;
 	@JsonProperty("$ref")
 	public String getSref() {
-		return sref;
+		return "";
 	}
 	public void setSref(String sref) {
 		this.sref = sref;

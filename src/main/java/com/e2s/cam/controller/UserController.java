@@ -1,7 +1,7 @@
 package com.e2s.cam.controller;
 
-import java.util.Map;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.e2s.cam.annotation.Authentication;
 import com.e2s.cam.module.SCIMAuthorization;
 import com.e2s.cam.request.Request;
 import com.e2s.cam.response.ListResponse;
 import com.e2s.cam.response.User;
 import com.e2s.cam.service.UserService;
+
+
 
 @RestController
 @CrossOrigin()
@@ -24,25 +25,30 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	private static final Logger logger = LogManager.getLogger(UserController.class);
+
 
 	@PostMapping("/info")
 	@SCIMAuthorization
 	public Object getUserInfo(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		User result = service.getByStaffId(request.getUserId());
 		return result;
 	}
 
 	@PostMapping("/findbycriteria")
 	@SCIMAuthorization
-	public Object getAllUsers(@RequestBody Request request) {
-		ListResponse result = service.getAllUsers(request.getFilter(), request.getStartIndex(),
-				request.getItemsPerPage(), request.getAscOrderBy(), request.getDescOrderBy());
+	public Object getAllUsers(@RequestBody(required = false) Request request) {
+		logger.info("parameters = " + request);
+		ListResponse result = service.getAllUsers(request);
 		return result;
 	}
 
 	@PostMapping("/update")
 	@SCIMAuthorization
 	public Object updateUsers(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		User result = service.updateByStaffId(request.getUserId(), request.getOperations().get(0).getValue());
 		return result;
 	}
@@ -50,6 +56,7 @@ public class UserController {
 	@PostMapping("/remove")
 	@SCIMAuthorization
 	public void deleteUser(@RequestBody Request request) {
+		logger.info("parameters = " + request);
 		service.deleteUser(request.getUserId());
 	}
 

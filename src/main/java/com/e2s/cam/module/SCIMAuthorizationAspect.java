@@ -93,7 +93,7 @@ public class SCIMAuthorizationAspect {
 				}
 			}		
 		} catch (Exception e) {
-			logger.debug(e.getMessage());
+			logger.info(e.getMessage());
 			// TODO: Log exception here
 		}
 		return new ErrorResponse(HttpStatus.UNAUTHORIZED, new ErrorResponseMessage("Unauthorised Request: Invalid request date time", HttpStatus.UNAUTHORIZED +""));		
@@ -108,10 +108,13 @@ public class SCIMAuthorizationAspect {
         }
 		
 		String httpMethod = request.getMethod().toUpperCase();
-		String protocol = request.getScheme().toLowerCase();
-		String hostName = request.getServerName().toLowerCase();
-		String hostPort = request.getServerPort() + "";
-		hostName = hostPort == "80" ? hostName : String.format("%s:%s", hostName, hostPort); 
+//		String protocol = request.getScheme().toLowerCase();
+		String hostName = request.getServerName().toLowerCase().split(":")[0];
+//		String hostPort = request.getServerPort() + "";
+		String protocol = "https";
+		String hostPort =  "443";
+//		hostName = hostPort == "80" ? hostName : String.format("%s:%s", hostName, hostPort); 
+
 		String requestURI = request.getRequestURI().toLowerCase();
 		String parameters = constructAndSortParam(reqParams);
 		logger.info("httpMethod = " + httpMethod);
@@ -125,7 +128,7 @@ public class SCIMAuthorizationAspect {
 		String combinedString = String.format("%s&%s://%s%s?%s", httpMethod, protocol,hostName,requestURI,parameters);
 		logger.info("combinedString" +combinedString);
 		System.out.println("combinedString" +combinedString);
-		logger.debug("combinedString = " + combinedString);
+		logger.info("combinedString = " + combinedString);
 		try {
 			SecretKeySpec signingKey = new SecretKeySpec(secretKey.getBytes(), "HMACSHA256");
 			
@@ -133,16 +136,16 @@ public class SCIMAuthorizationAspect {
 			mac.init(signingKey);
 			byte[] rawHmac = mac.doFinal(combinedString.getBytes());
 			String authString = new String(Base64.getEncoder().encodeToString(rawHmac));
-			logger.debug("authString = " + authString);
+			logger.info("authString = " + authString);
 			String authHeader = getAuthorizationHeader(request);
-			logger.debug("authHeader = " + authHeader);
+			logger.info("authHeader = " + authHeader);
 			if (!authHeader.equals(authString))
             {
 				return new ErrorResponse(HttpStatus.UNAUTHORIZED, new ErrorResponseMessage("Unauthorised Request","Invalid authorization header"));				
             }
 			return null;	
 		} catch (Exception ex) {
-			//TODO Log exception here
+			logger.info("exception while generate auth token"+ex.getMessage());
 			return new ErrorResponse(HttpStatus.UNAUTHORIZED, new ErrorResponseMessage("Unauthorised Request","Invalid authorization header"));
 		}
 	}
@@ -171,4 +174,6 @@ public class SCIMAuthorizationAspect {
 		map.forEach((x,y) -> m.put(x, String.join(" ", y))); 
 		return m;
 	}
+	
+	
 }

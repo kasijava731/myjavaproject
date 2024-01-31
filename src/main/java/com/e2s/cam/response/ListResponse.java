@@ -36,8 +36,8 @@ public class ListResponse<T> {
 		return resources;
 	}
 	
-	public void setResource(T t) {
-		resources.add(t);
+	public void setResource(List<T> resources) {
+		this.resources = resources;
 	}
 	
 	public int getStartIndex() {

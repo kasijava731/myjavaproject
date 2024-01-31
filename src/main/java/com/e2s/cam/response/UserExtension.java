@@ -7,30 +7,36 @@ public class UserExtension {
 	
 	DateFormat utcFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 	
-	Date lastLogin;
-	Date lastPasswordChanged;
-	Boolean isPrivileged;
+//	Date lastLogin;
+//	Date lastPasswordChanged;
+//	Boolean isPrivileged;
 	
-	public UserExtension() {
-		utcFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-	}
+	String lastLogin;
+	String lastPasswordChanged;
+	String isPrivileged;
+	
+
 	
 	public String getLastLogin() {
-		return utcFormat.format(lastLogin);
+		return lastLogin;
 	}
-	public void setLastLogin(Date lastLogin) {
+	public void setLastLogin(String lastLogin) {
 		this.lastLogin = lastLogin;
 	}
 	public String getLastPasswordChanged() {
-		return utcFormat.format(lastPasswordChanged);
+		return lastPasswordChanged;
 	}
-	public void setLastPasswordChanged(Date lastPasswordChanged) {
+	public void setLastPasswordChanged(String lastPasswordChanged) {
 		this.lastPasswordChanged = lastPasswordChanged;
 	}
-	public Boolean getIsPrivileged() {
+	public String getIsPrivileged() {
 		return isPrivileged;
 	}
-	public void setIsPrivileged(Boolean isPrivileged) {
+	public void setIsPrivileged(String isPrivileged) {
 		this.isPrivileged = isPrivileged;
-	}	
+	}
+	
+	
+	
+	
 }

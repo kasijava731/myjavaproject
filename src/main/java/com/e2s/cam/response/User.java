@@ -20,10 +20,12 @@ public class User {
 	String userType;
 	List<Groups> groups;	
 	UserEnterprise enterprise;
-//	UserExtension extension;
+	UserExtension extension;
 	
 	{
 		schemas.add("urn:ietf:params:scim:schemas:core:2.0:User");
+		schemas.add("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User");
+		schemas.add("urn:ietf:params:scim:schemas:extension:cam:2.0:User");
 	}
 	
 	public List<String> getSchemas() {
@@ -107,7 +109,8 @@ public class User {
 	}
 	@JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
 	public UserEnterprise getEnterprise() {
-		return enterprise;
+		Manager manager=new Manager("","","");
+		return	new UserEnterprise("","","",manager);
 	}
 	public void setEnterprise(UserEnterprise enterprise) {
 		if (!this.getSchemas().contains("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")) {
@@ -116,15 +119,19 @@ public class User {
 		this.enterprise = enterprise;
 	}
 	
-//	@JsonProperty("urn:ietf:params:scim:schemas:extension:cam:2.0:User")
-//	public UserExtension getExtension() {
-//		return extension;
-//	}
-//	public void setExtension(UserExtension extension) {
-//		if (!this.getSchemas().contains("urn:ietf:params:scim:schemas:extension:cam:2.0:User")) {
-//			this.getSchemas().add("urn:ietf:params:scim:schemas:extension:cam:2.0:User");
-//		}		
-//		this.extension = extension;
-//	}	
+	@JsonProperty("urn:ietf:params:scim:schemas:extension:cam:2.0:User")
+	public UserExtension getExtension() {
+		UserExtension userEx=new UserExtension();
+		userEx.setIsPrivileged("");
+		userEx.setLastLogin("");
+		userEx.setLastPasswordChanged("");
+		return userEx;
+	}
+	public void setExtension(UserExtension extension) {
+		if (!this.getSchemas().contains("urn:ietf:params:scim:schemas:extension:cam:2.0:User")) {
+			this.getSchemas().add("urn:ietf:params:scim:schemas:extension:cam:2.0:User");
+		}		
+		this.extension = extension;
+	}	
 	
 }

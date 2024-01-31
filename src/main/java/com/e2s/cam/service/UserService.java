@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +27,7 @@ import com.e2s.cam.repository.GroupDetailsRepository;
 import com.e2s.cam.repository.GroupRepository;
 import com.e2s.cam.repository.StaffRepository;
 import com.e2s.cam.repository.UserRepository;
+import com.e2s.cam.request.Request;
 import com.e2s.cam.response.Emails;
 import com.e2s.cam.response.Groups;
 import com.e2s.cam.response.ListResponse;
@@ -52,6 +54,10 @@ public class UserService {
 
 	@Autowired
 	private CommunityUserProfilesRepository communityUserProfilesRepository;
+	
+	
+	@Value("${SCIM.API.Org}")
+	Long orgId;
 
 	public User getByStaffId(String staffId) {
 		UserEntity userDetails = userRepository.findByStaffId(staffId);
@@ -62,50 +68,83 @@ public class UserService {
 
 	}
 
-	public ListResponse getAllUsers(String filter, int startIndex, int itemsPerPage, String ascOrderBy,
-			String descOrderBy) {
-		Pageable pageable = constructPageable(startIndex, itemsPerPage, ascOrderBy, descOrderBy);
+	public ListResponse getAllUsers(Request request) {
+		
+//		Pageable pageable = null;
 		Specification<UserEntity> spec = Specification.where(null);
 
-        if (filter != null) {
-            String[] filterParts = null;
-            String operator="";
-        	if(filter.contains(" co ")) {
-                filterParts = filter.split(" co ");
-                operator="co";
-        	}else if (filter.contains(" eq ")) {
-        		filterParts = filter.split(" eq ");
-                operator="eq";
-        	}
-        	System.out.println("hsdhsd "+filterParts.length);
-            if (filterParts.length == 2) {
-                String field = filterParts[0];
-            	System.out.println("field1 "+field);
-                String value = filterParts[1].replaceAll("'", ""); // Remove single quotes from the value
-            	System.out.println("value "+value);
-            	System.out.println("field "+field);
-            	if(Objects.equals(field, "userId")) {
-            		field="staffId";
+        if (!Objects.equals(request, null)) {
+        	String filter=request.getFilter();
+//    		int startIndex=1; 
+//    		int itemsPerPage=10;
+//    		System.out.println("size"+request.getItemsPerPage());
+//    		if(!Objects.equals(request.getItemsPerPage(), 0)) {
+//    			startIndex=request.getStartIndex(); 
+//           	 itemsPerPage= request.getItemsPerPage();
+//    		}
+//    		String ascOrderBy=request.getAscOrderBy();
+//    		String descOrderBy=request.getDescOrderBy();
+//    		pageable=constructPageable(startIndex, itemsPerPage, ascOrderBy, descOrderBy);
+            if(!Objects.equals(filter, null)&&!Objects.equals(filter, "")) {
+            	String[] filterParts = null;
+                String operator="";
+            	if(filter.contains(" co ")) {
+                    filterParts = filter.split(" co ");
+                    operator="co";
+            	}else if (filter.contains(" eq ")) {
+            		filterParts = filter.split(" eq ");
+                    operator="eq";
             	}
-                String finalField=field;
+            	System.out.println("hsdhsd "+filterParts.length);
+                if (filterParts.length == 2) {
+                    String field = filterParts[0];
+                	System.out.println("field1 "+field);
+                    String value = filterParts[1].replaceAll("'", ""); // Remove single quotes from the value
+                	System.out.println("value "+value);
+                	System.out.println("field "+field);
+                	if(Objects.equals(field, "userId")) {
+                		field="staffId";
+                	}
+                    String finalField=field;
 
-                switch (operator) {
-                    case "co":
-                        spec = spec.and((root, query, cb) -> cb.like(root.get(finalField), "%" + value + "%"));
-                        break;
-                    case "eq":
-                        spec = spec.and((root, query, cb) -> cb.equal(root.get(finalField), value));
-                        break;
+                    switch (operator) {
+                        case "co":
+                            spec = spec.and((root, query, cb) -> cb.like(root.get(finalField), "%" + value + "%"));
+                            break;
+                        case "eq":
+                            spec = spec.and((root, query, cb) -> cb.equal(root.get(finalField), value));
+                            break;
+                    }
                 }
             }
         }
-        ListResponse listOfUserResponse = new ListResponse();
-		Page<UserEntity> userDetails = userRepository.findAll(spec,pageable);
+//            else {
+//			pageable=Pageable.unpaged();
+//		}
+        List<UserEntity> dteails=new ArrayList<>();
+        Sort sort=constructSort(request);
+        dteails=userRepository.findAll(spec,sort);
+        int totalResults = dteails.size();
+        int endIndex =0;
+        int  startIndex=0; 
+        int  itemsPerPage= 0;
+        if(!Objects.equals(request, null)) {
+        	  startIndex=request.getStartIndex(); 
+              itemsPerPage= request.getItemsPerPage();
+        	endIndex= Math.min(request.getStartIndex() + request.getItemsPerPage(), totalResults);
+        	 dteails = dteails.subList(request.getStartIndex()  - 1, endIndex);
+        }else {
+        	startIndex=1;
+        	itemsPerPage=totalResults;
+        	
+        }
+
+          ListResponse listOfUserResponse = new ListResponse();
 		List<String> schema = new ArrayList<>();
 		schema.add("urn:ietf:params:scim:api:messages:2.0:ListResponse");
 		List<User> allUserDetails = new ArrayList<>();
-		if (!Objects.equals(userDetails, null) && userDetails.getSize() > 0) {
-			for (UserEntity user : userDetails.getContent()) {
+		if (!Objects.equals(dteails, null) && dteails.size() > 0) {
+			for (UserEntity user : dteails) {
 
 				User constructedResponse = constructResponse(user);
 				allUserDetails.add(constructedResponse);
@@ -113,9 +152,26 @@ public class UserService {
 			}
 		}
 		listOfUserResponse.setResource(allUserDetails);
-		listOfUserResponse.setStartIndex(userDetails.getNumber()+1);
-		listOfUserResponse.setTotalResults(userDetails.getTotalElements());
-		listOfUserResponse.setItemsPerPage(userDetails.getSize());
+		listOfUserResponse.setStartIndex(startIndex);
+		listOfUserResponse.setTotalResults(totalResults);
+		listOfUserResponse.setItemsPerPage(itemsPerPage);
+//        ListResponse listOfUserResponse = new ListResponse();
+//		Page<UserEntity> userDetails = userRepository.findAll(spec,pageable);
+//		List<String> schema = new ArrayList<>();
+//		schema.add("urn:ietf:params:scim:api:messages:2.0:ListResponse");
+//		List<User> allUserDetails = new ArrayList<>();
+//		if (!Objects.equals(userDetails, null) && userDetails.getSize() > 0) {
+//			for (UserEntity user : userDetails.getContent()) {
+//
+//				User constructedResponse = constructResponse(user);
+//				allUserDetails.add(constructedResponse);
+//
+//			}
+//		}
+//		listOfUserResponse.setResource(allUserDetails);
+//		listOfUserResponse.setStartIndex(userDetails.getNumber()+1);
+//		listOfUserResponse.setTotalResults(userDetails.getTotalElements());
+//		listOfUserResponse.setItemsPerPage(userDetails.getSize());
 		return listOfUserResponse;
 	}
 
@@ -131,7 +187,7 @@ public class UserService {
 		System.out.println("staff "+staff);
 		CommunityUserProfiles communityUserProfiles = communityUserProfilesRepository.findByUserId(userDetails.getUserId());
 		System.out.println("CommunityUserProfiles "+staff);
-		Users authuser=usersRepository.findByIdAndOrganizationId(id, 76l);
+		Users authuser=usersRepository.findByIdAndOrganizationId(id, orgId);
 		if (!Objects.equals(getStatus(Status), null)) {
 			staff.setStatus(getStatus(Status));
 			communityUserProfiles.setStatus(getStatus(Status));
@@ -142,7 +198,7 @@ public class UserService {
 		System.out.println("staff saves "+staff);
 		communityUserProfilesRepository.save(communityUserProfiles);
 		System.out.println("comm saves "+staff);
-		usersRepository.updateName(76L,id,getStatus(Status));
+		usersRepository.updateName(orgId,id,getStatus(Status));
 		System.out.println("users saves "+staff);
 		return constructResponse(userDetails);
 
@@ -173,8 +229,8 @@ public class UserService {
 		String createdAt =null;
 		String updatedAt =null;
 		try {
-			 createdAt = changeData(userDetails.getCreatedAt());
-			 updatedAt = changeData(userDetails.getUpdatedAt());
+			 createdAt = changeDateFormat(userDetails.getCreatedAt());
+			 updatedAt = changeDateFormat(userDetails.getUpdatedAt());
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -217,9 +273,9 @@ public class UserService {
 
 	public Pageable constructPageable(int startIndex, int itemsPerPage, String ascOrderBy, String descOrderBy) {
 		Sort sort = null;
-		if (ascOrderBy != null) {
+		if (!Objects.equals(ascOrderBy, null)&&!Objects.equals(ascOrderBy, "")) {
 			sort = Sort.by(ascOrderBy).ascending();
-		} else if (descOrderBy != null) {
+		} else if (!Objects.equals(descOrderBy, null)&&!Objects.equals(descOrderBy, "")) {
 			sort = Sort.by(descOrderBy).descending();
 		}
 
@@ -230,6 +286,25 @@ public class UserService {
 			startIndex=startIndex-1;
 		}
 		return PageRequest.of(startIndex, itemsPerPage, sort);
+	}
+	public Sort constructSort(Request request) {
+		Sort sort = null;
+		if(!Objects.equals(request, null)) {
+			if (!Objects.equals(request.getAscOrderBy(), null)&&!Objects.equals(request.getAscOrderBy(), "")) {
+				sort = Sort.by(request.getAscOrderBy()).ascending();
+			} else if (!Objects.equals(request.getDescOrderBy(), null)&&!Objects.equals(request.getDescOrderBy(), "")) {
+				sort = Sort.by(request.getDescOrderBy()).descending();
+			}
+
+			if (sort == null) {
+				sort = Sort.by("id").ascending(); // You can change the field as per your requirement
+			}
+			
+			return sort;
+		}else {
+			return Sort.by("id").ascending();
+		}
+	
 	}
 
 	String getStatus(String status) {
@@ -250,27 +325,29 @@ public class UserService {
 		staffRepository.delete(staff);
 		CommunityUserProfiles communityUserProfiles=communityUserProfilesRepository.findByUserId(staff.getUserId());
 		communityUserProfilesRepository.delete(communityUserProfiles);
-		Users authuser=usersRepository.findByIdAndOrganizationId(Long.valueOf(staff.getUserId()), 76l);
+		Users authuser=usersRepository.findByIdAndOrganizationId(Long.valueOf(staff.getUserId()), orgId);
 		usersRepository.delete(authuser);
 		
 	}
 	
-	public String changeData(Long time) {
-		long currentMillis = System.currentTimeMillis();
-
-        // Create a Date object from the milliseconds
-        Date date = new Date(currentMillis);
-
-        // Create a SimpleDateFormat object with the desired ISO 8601 format
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+	public String changeDateFormat(Long currentTimeMillis) {
+		if(Objects.equals(currentTimeMillis, null)) {
+			return "";
+		}
         
-        // Set the time zone to UTC
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC")); // Set the time zone to UTC to match the format you provided
 
-        // Format the Date object as an ISO 8601 string
-        String iso8601Format = sdf.format(date);
-        return iso8601Format;
-	}
+        // Convert milliseconds to Date object
+        Date date = new Date(currentTimeMillis);
 
+        // Format the date according to the specified format
+        String formattedDate = dateFormat.format(date);
+
+        // Print the formatted date
+       return formattedDate;
+    }
+	
+	
 	
 }
