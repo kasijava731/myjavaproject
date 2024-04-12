@@ -1,0 +1,514 @@
+2024-03-01T12:22:45.345+0530 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23h58m56s181ms178µs415ns).
+2024-03-01T12:22:45.343+0530 WARN HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=23h58m52s854ms140µs865ns).
+2024-03-01T12:22:45.471+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T12:22:45.527+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-01T12:22:45.543+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T12:22:45.544+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T12:22:45.545+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T12:22:47.318+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-01T12:24:12.927+0530 INFO Starting CamApiInterfaceApplication v0.0.1-SNAPSHOT using Java 17.0.7 with PID 5857 (/home/bharath/Downloads/cam-api-interface/target/cam-api-interface-0.0.1-SNAPSHOT.jar started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-01T12:24:12.930+0530 INFO The following 1 profile is active: "snapp"
+2024-03-01T12:24:14.999+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T12:24:15.141+0530 INFO Finished Spring Data repository scanning in 118 ms. Found 8 JPA repository interfaces.
+2024-03-01T12:24:15.143+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T12:24:15.151+0530 INFO Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interfaces.
+2024-03-01T12:24:16.857+0530 INFO Tomcat initialized with port(s): 8088 (http)
+2024-03-01T12:24:16.866+0530 INFO Initializing ProtocolHandler ["http-nio-8088"]
+2024-03-01T12:24:16.869+0530 INFO Starting service [Tomcat]
+2024-03-01T12:24:16.870+0530 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2024-03-01T12:24:16.965+0530 INFO Initializing Spring embedded WebApplicationContext
+2024-03-01T12:24:16.968+0530 INFO Root WebApplicationContext: initialization completed in 3418 ms
+2024-03-01T12:24:17.289+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-01T12:24:17.479+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-01T12:24:17.483+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-01T12:24:18.412+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:24:18.545+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T12:24:18.564+0530 INFO HikariPool-1 - Starting...
+2024-03-01T12:24:20.938+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a96d56c
+2024-03-01T12:24:20.943+0530 INFO HikariPool-1 - Start completed.
+2024-03-01T12:24:21.366+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:24:22.157+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T12:24:22.161+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T12:24:22.189+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-01T12:24:22.284+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:24:22.285+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T12:24:22.285+0530 INFO HikariPool-2 - Starting...
+2024-03-01T12:24:24.330+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a457c2b
+2024-03-01T12:24:24.331+0530 INFO HikariPool-2 - Start completed.
+2024-03-01T12:24:24.488+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:24:24.508+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T12:24:24.509+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T12:24:25.276+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-01T12:24:25.863+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T12:24:26.289+0530 INFO Starting ProtocolHandler ["http-nio-8088"]
+2024-03-01T12:24:26.346+0530 INFO Tomcat started on port(s): 8088 (http) with context path ''
+2024-03-01T12:24:26.403+0530 INFO Started CamApiInterfaceApplication in 14.43 seconds (process running for 17.938)
+2024-03-01T12:25:02.618+0530 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01T12:25:02.618+0530 INFO Initializing Servlet 'dispatcherServlet'
+2024-03-01T12:25:02.620+0530 INFO Completed initialization in 2 ms
+2024-03-01T12:25:02.789+0530 ERROR Unauthorised Request: Invalid request date time
+2024-03-01T12:25:02.790+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@75e89371
+2024-03-01T12:25:16.690+0530 INFO httpMethod = POST
+2024-03-01T12:25:16.691+0530 INFO protocol = https
+2024-03-01T12:25:16.691+0530 INFO hostName = localhost
+2024-03-01T12:25:16.692+0530 INFO hostPort = 443
+2024-03-01T12:25:16.692+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:25:16.692+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:16.693+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:16.693+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:16.722+0530 INFO authString = OFNnyBdS8/Zim0fAd3hhkbI/9LaUoRIn1pqs+Cy8A2k=
+2024-03-01T12:25:16.723+0530 INFO authHeader = JkP0/V8IGIbyCas3+sSp54Z+VKNcYoBdSlVyYSQzHYA=
+2024-03-01T12:25:16.723+0530 ERROR Unauthorised Request
+2024-03-01T12:25:16.723+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@7cbc2688
+2024-03-01T12:25:41.214+0530 INFO httpMethod = POST
+2024-03-01T12:25:41.215+0530 INFO protocol = https
+2024-03-01T12:25:41.215+0530 INFO hostName = localhost
+2024-03-01T12:25:41.215+0530 INFO hostPort = 443
+2024-03-01T12:25:41.215+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:25:41.215+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:41.216+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:41.216+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:41.216+0530 INFO authString = OFNnyBdS8/Zim0fAd3hhkbI/9LaUoRIn1pqs+Cy8A2k=
+2024-03-01T12:25:41.216+0530 INFO authHeader = JkP0/V8IGIbyCas3+sSp54Z+VKNcYoBdSlVyYSQzHYA=
+2024-03-01T12:25:41.216+0530 ERROR Unauthorised Request
+2024-03-01T12:25:41.217+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@795d55ec
+2024-03-01T12:25:51.209+0530 INFO httpMethod = POST
+2024-03-01T12:25:51.209+0530 INFO protocol = https
+2024-03-01T12:25:51.209+0530 INFO hostName = localhost
+2024-03-01T12:25:51.209+0530 INFO hostPort = 443
+2024-03-01T12:25:51.210+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:25:51.210+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:51.210+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:51.210+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276111210
+2024-03-01T12:25:51.210+0530 INFO authString = OFNnyBdS8/Zim0fAd3hhkbI/9LaUoRIn1pqs+Cy8A2k=
+2024-03-01T12:25:51.211+0530 INFO authHeader = JkP0/V8IGIbyCas3+sSp54Z+VKNcYoBdSlVyYSQzHYA=
+2024-03-01T12:25:51.211+0530 ERROR Unauthorised Request
+2024-03-01T12:25:51.211+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@aa4014c
+2024-03-01T12:27:22.589+0530 INFO test logger
+2024-03-01T12:27:22.589+0530 INFO httpMethod = POST
+2024-03-01T12:27:22.590+0530 INFO protocol = https
+2024-03-01T12:27:22.590+0530 INFO hostName = cam-snapp-uat.engage2serve.com
+2024-03-01T12:27:22.590+0530 INFO hostPort = 443
+2024-03-01T12:27:22.591+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:27:22.591+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709275425921
+2024-03-01T12:27:22.592+0530 INFO test logger
+2024-03-01T12:27:36.345+0530 INFO test logger
+2024-03-01T12:27:36.346+0530 INFO httpMethod = POST
+2024-03-01T12:27:36.346+0530 INFO protocol = https
+2024-03-01T12:27:36.346+0530 INFO hostName = cam-snapp-uat.engage2serve.com
+2024-03-01T12:27:36.346+0530 INFO hostPort = 443
+2024-03-01T12:27:36.346+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:27:36.347+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709275425921
+2024-03-01T12:27:36.347+0530 INFO test logger
+2024-03-01T12:27:45.880+0530 INFO test logger
+2024-03-01T12:27:45.880+0530 INFO httpMethod = POST
+2024-03-01T12:27:45.881+0530 INFO protocol = https
+2024-03-01T12:27:45.881+0530 INFO hostName = localhost:8088
+2024-03-01T12:27:45.881+0530 INFO hostPort = 443
+2024-03-01T12:27:45.881+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:27:45.882+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709275425921
+2024-03-01T12:27:45.882+0530 INFO test logger
+2024-03-01T12:28:09.161+0530 INFO test logger
+2024-03-01T12:28:09.161+0530 INFO httpMethod = POST
+2024-03-01T12:28:09.162+0530 INFO protocol = https
+2024-03-01T12:28:09.162+0530 INFO hostName = localhost:8088
+2024-03-01T12:28:09.162+0530 INFO hostPort = 443
+2024-03-01T12:28:09.162+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:28:09.162+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:28:09.163+0530 INFO test logger
+2024-03-01T12:28:18.275+0530 INFO httpMethod = POST
+2024-03-01T12:28:18.276+0530 INFO protocol = https
+2024-03-01T12:28:18.276+0530 INFO hostName = localhost
+2024-03-01T12:28:18.276+0530 INFO hostPort = 443
+2024-03-01T12:28:18.276+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:28:18.276+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:28:18.276+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:28:18.276+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:28:18.277+0530 INFO authString = VlolmZQJ8hDFUA8hLSqx+eW7svSlpJEbE0xxRhbKVXM=
+2024-03-01T12:28:18.277+0530 INFO authHeader = iwpECie1BQa5fjwtnGFr7xkNaQt/4QwVZom42ehMcP4=
+2024-03-01T12:28:18.277+0530 ERROR Unauthorised Request
+2024-03-01T12:28:18.277+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@11216cdb
+2024-03-01T12:30:15.838+0530 INFO httpMethod = POST
+2024-03-01T12:30:15.839+0530 INFO protocol = https
+2024-03-01T12:30:15.839+0530 INFO hostName = localhost
+2024-03-01T12:30:15.839+0530 INFO hostPort = 443
+2024-03-01T12:30:15.839+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:30:15.839+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:30:15.839+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:30:15.840+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:30:15.840+0530 INFO authString = VlolmZQJ8hDFUA8hLSqx+eW7svSlpJEbE0xxRhbKVXM=
+2024-03-01T12:30:15.840+0530 INFO authHeader = iwpECie1BQa5fjwtnGFr7xkNaQt/4QwVZom42ehMcP4=
+2024-03-01T12:30:15.840+0530 ERROR Unauthorised Request
+2024-03-01T12:30:15.840+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@463fe68
+2024-03-01T12:31:47.779+0530 ERROR Unauthorised Request: Invalid request date time
+2024-03-01T12:31:47.779+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@63c2ef54
+2024-03-01T12:31:59.906+0530 INFO httpMethod = POST
+2024-03-01T12:31:59.906+0530 INFO protocol = https
+2024-03-01T12:31:59.907+0530 INFO hostName = localhost
+2024-03-01T12:31:59.907+0530 INFO hostPort = 443
+2024-03-01T12:31:59.907+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:31:59.907+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:31:59.907+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:31:59.908+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:31:59.908+0530 INFO authString = OlQlldGhf4JFeneqmBfsT9Eme1s6ELE/OSCp1ALuVi0=
+2024-03-01T12:31:59.908+0530 INFO authHeader = iwpECie1BQa5fjwtnGFr7xkNaQt/4QwVZom42ehMcP4=
+2024-03-01T12:31:59.908+0530 ERROR Unauthorised Request
+2024-03-01T12:31:59.908+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@68858061
+2024-03-01T12:32:08.717+0530 INFO httpMethod = POST
+2024-03-01T12:32:08.718+0530 INFO protocol = https
+2024-03-01T12:32:08.718+0530 INFO hostName = localhost
+2024-03-01T12:32:08.718+0530 INFO hostPort = 443
+2024-03-01T12:32:08.718+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:32:08.718+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:32:08.718+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:32:08.719+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276514280
+2024-03-01T12:32:08.719+0530 INFO authString = OlQlldGhf4JFeneqmBfsT9Eme1s6ELE/OSCp1ALuVi0=
+2024-03-01T12:32:08.719+0530 INFO authHeader = iwpECie1BQa5fjwtnGFr7xkNaQt/4QwVZom42ehMcP4=
+2024-03-01T12:32:08.719+0530 ERROR Unauthorised Request
+2024-03-01T12:32:08.719+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@9177674
+2024-03-01T12:32:27.309+0530 INFO test logger
+2024-03-01T12:32:27.309+0530 INFO httpMethod = POST
+2024-03-01T12:32:27.309+0530 INFO protocol = https
+2024-03-01T12:32:27.309+0530 INFO hostName = localhost:8088
+2024-03-01T12:32:27.309+0530 INFO hostPort = 443
+2024-03-01T12:32:27.309+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:32:27.310+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:32:27.310+0530 INFO test logger
+2024-03-01T12:33:14.556+0530 INFO test logger
+2024-03-01T12:33:14.557+0530 INFO httpMethod = POST
+2024-03-01T12:33:14.557+0530 INFO protocol = https
+2024-03-01T12:33:14.557+0530 INFO hostName = localhost
+2024-03-01T12:33:14.557+0530 INFO hostPort = 443
+2024-03-01T12:33:14.557+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:33:14.557+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276277940
+2024-03-01T12:33:14.558+0530 INFO test logger
+2024-03-01T12:33:27.020+0530 INFO test logger
+2024-03-01T12:33:27.020+0530 INFO httpMethod = POST
+2024-03-01T12:33:27.021+0530 INFO protocol = https
+2024-03-01T12:33:27.021+0530 INFO hostName = localhost
+2024-03-01T12:33:27.021+0530 INFO hostPort = 443
+2024-03-01T12:33:27.021+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:33:27.021+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276597648
+2024-03-01T12:33:27.022+0530 INFO test logger
+2024-03-01T12:33:34.931+0530 INFO httpMethod = POST
+2024-03-01T12:33:34.932+0530 INFO protocol = https
+2024-03-01T12:33:34.932+0530 INFO hostName = localhost
+2024-03-01T12:33:34.932+0530 INFO hostPort = 443
+2024-03-01T12:33:34.932+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T12:33:34.933+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276597648
+2024-03-01T12:33:34.933+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276597648
+2024-03-01T12:33:34.933+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709276597648
+2024-03-01T12:33:34.933+0530 INFO authString = EExPqGbss28IfgCnJpBUDi3fv3Rf6m7S4691q51mbmc=
+2024-03-01T12:33:34.933+0530 INFO authHeader = EExPqGbss28IfgCnJpBUDi3fv3Rf6m7S4691q51mbmc=
+2024-03-01T12:33:34.940+0530 INFO parameters = Request [userId=null, Operations=null, filter=, startIndex=1, itemsPerPage=5, ascOrderBy=, descOrderBy=, groupId=null]
+2024-03-01T12:54:30.215+0530 ERROR Unauthorised Request: Invalid account ID
+2024-03-01T12:54:30.215+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@54e5fc79
+2024-03-01T12:54:56.102+0530 ERROR Unauthorised Request: Invalid account ID
+2024-03-01T12:54:56.102+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@63627a0c
+2024-03-01T12:55:24.580+0530 INFO Could not detect default configuration classes for test class [com.e2s.cam.CamApiInterfaceApplicationTests]: CamApiInterfaceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-03-01T12:55:24.691+0530 INFO Found @SpringBootConfiguration com.e2s.cam.CamApiInterfaceApplication for test class com.e2s.cam.CamApiInterfaceApplicationTests
+2024-03-01T12:55:25.088+0530 WARN 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/home/bharath/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/home/bharath/.m2/repository/org/json/json/20210307/json-20210307.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-03-01T12:55:25.124+0530 INFO Starting CamApiInterfaceApplicationTests using Java 17.0.1 with PID 6923 (started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-01T12:55:25.128+0530 INFO No active profile set, falling back to 1 default profile: "default"
+2024-03-01T12:55:25.826+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T12:55:25.870+0530 INFO Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interfaces.
+2024-03-01T12:55:25.872+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T12:55:25.900+0530 INFO Finished Spring Data repository scanning in 27 ms. Found 8 JPA repository interfaces.
+2024-03-01T12:55:26.731+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-01T12:55:26.779+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-01T12:55:26.782+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-01T12:55:26.994+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:55:27.121+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T12:55:27.138+0530 INFO HikariPool-1 - Starting...
+2024-03-01T12:55:29.571+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@436a563f
+2024-03-01T12:55:29.576+0530 INFO HikariPool-1 - Start completed.
+2024-03-01T12:55:29.914+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:55:30.464+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T12:55:30.468+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T12:55:30.486+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-01T12:55:30.501+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:55:30.501+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T12:55:30.502+0530 INFO HikariPool-2 - Starting...
+2024-03-01T12:55:32.527+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e47637c
+2024-03-01T12:55:32.527+0530 INFO HikariPool-2 - Start completed.
+2024-03-01T12:55:32.707+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T12:55:32.852+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T12:55:32.853+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T12:55:33.624+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-01T12:55:34.250+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T12:55:34.718+0530 INFO Started CamApiInterfaceApplicationTests in 9.862 seconds (process running for 11.135)
+2024-03-01T12:55:35.396+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T12:55:35.397+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T12:55:35.397+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T12:55:36.659+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-01T12:55:36.660+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-01T12:55:37.864+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T13:42:09.926+0530 INFO test logger
+2024-03-01T13:42:09.978+0530 INFO httpMethod = POST
+2024-03-01T13:42:09.978+0530 INFO protocol = https
+2024-03-01T13:42:09.979+0530 INFO hostName = cam-snapp-uat.engage2serve.com
+2024-03-01T13:42:09.979+0530 INFO hostPort = 443
+2024-03-01T13:42:09.979+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:42:09.979+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:42:10.214+0530 INFO test logger
+2024-03-01T13:42:20.565+0530 ERROR Unauthorised Request: Invalid account ID
+2024-03-01T13:42:20.565+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@23f5b71a
+2024-03-01T13:42:44.134+0530 INFO httpMethod = POST
+2024-03-01T13:42:44.134+0530 INFO protocol = https
+2024-03-01T13:42:44.134+0530 INFO hostName = localhost
+2024-03-01T13:42:44.134+0530 INFO hostPort = 443
+2024-03-01T13:42:44.135+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:42:44.135+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:42:44.135+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:42:44.135+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:42:44.135+0530 INFO authString = uZeiK5E/F/lF3g2Vl7UR6zqTXwWxJQIjEY7YaecoG8g=
+2024-03-01T13:42:44.136+0530 INFO authHeader = OXDTQSN7amnBojCgc0YVtTvflgaK6+DH2ViVN6wqIyM=
+2024-03-01T13:42:44.136+0530 ERROR Unauthorised Request
+2024-03-01T13:42:44.136+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@15fec852
+2024-03-01T13:43:08.153+0530 INFO httpMethod = POST
+2024-03-01T13:43:08.153+0530 INFO protocol = https
+2024-03-01T13:43:08.154+0530 INFO hostName = localhost
+2024-03-01T13:43:08.154+0530 INFO hostPort = 443
+2024-03-01T13:43:08.154+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:43:08.154+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:08.154+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:08.155+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:08.155+0530 INFO authString = uZeiK5E/F/lF3g2Vl7UR6zqTXwWxJQIjEY7YaecoG8g=
+2024-03-01T13:43:08.155+0530 INFO authHeader = OXDTQSN7amnBojCgc0YVtTvflgaK6+DH2ViVN6wqIyM=
+2024-03-01T13:43:08.155+0530 ERROR Unauthorised Request
+2024-03-01T13:43:08.155+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@6e13847c
+2024-03-01T13:43:11.720+0530 INFO test logger
+2024-03-01T13:43:11.720+0530 INFO httpMethod = POST
+2024-03-01T13:43:11.721+0530 INFO protocol = https
+2024-03-01T13:43:11.721+0530 INFO hostName = cam-snapp-uat.engage2serve.com
+2024-03-01T13:43:11.721+0530 INFO hostPort = 443
+2024-03-01T13:43:11.721+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:43:11.721+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:11.721+0530 INFO test logger
+2024-03-01T13:43:30.661+0530 INFO test logger
+2024-03-01T13:43:30.661+0530 INFO httpMethod = POST
+2024-03-01T13:43:30.661+0530 INFO protocol = https
+2024-03-01T13:43:30.661+0530 INFO hostName = localhost
+2024-03-01T13:43:30.662+0530 INFO hostPort = 443
+2024-03-01T13:43:30.662+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:43:30.662+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:30.662+0530 INFO test logger
+2024-03-01T13:43:35.656+0530 INFO httpMethod = POST
+2024-03-01T13:43:35.657+0530 INFO protocol = https
+2024-03-01T13:43:35.657+0530 INFO hostName = localhost
+2024-03-01T13:43:35.657+0530 INFO hostPort = 443
+2024-03-01T13:43:35.657+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T13:43:35.658+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:35.658+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:35.658+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709280721333
+2024-03-01T13:43:35.658+0530 INFO authString = uZeiK5E/F/lF3g2Vl7UR6zqTXwWxJQIjEY7YaecoG8g=
+2024-03-01T13:43:35.658+0530 INFO authHeader = uZeiK5E/F/lF3g2Vl7UR6zqTXwWxJQIjEY7YaecoG8g=
+2024-03-01T13:43:35.659+0530 INFO parameters = Request [userId=null, Operations=null, filter=, startIndex=1, itemsPerPage=5, ascOrderBy=, descOrderBy=, groupId=null]
+2024-03-01T14:17:27.568+0530 INFO test logger
+2024-03-01T14:17:27.584+0530 INFO httpMethod = POST
+2024-03-01T14:17:27.585+0530 INFO protocol = https
+2024-03-01T14:17:27.585+0530 INFO hostName = localhost
+2024-03-01T14:17:27.585+0530 INFO hostPort = 443
+2024-03-01T14:17:27.585+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T14:17:27.585+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:17:27.585+0530 INFO test logger
+2024-03-01T14:17:33.329+0530 INFO httpMethod = POST
+2024-03-01T14:17:33.330+0530 INFO protocol = https
+2024-03-01T14:17:33.330+0530 INFO hostName = localhost
+2024-03-01T14:17:33.330+0530 INFO hostPort = 443
+2024-03-01T14:17:33.330+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T14:17:33.330+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:17:33.331+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:17:33.331+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:17:33.331+0530 INFO authString = HntPJwj1nOvxJ0DH8WgXi/t0sR6cMI0RLi69hWGyu+k=
+2024-03-01T14:17:33.331+0530 INFO authHeader = HntPJwj1nOvxJ0DH8WgXi/t0sR6cMI0RLi69hWGyu+k=
+2024-03-01T14:17:33.331+0530 INFO parameters = Request [userId=null, Operations=null, filter=, startIndex=1, itemsPerPage=5, ascOrderBy=, descOrderBy=, groupId=null]
+2024-03-01T14:17:53.452+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:17:53.453+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-01T14:17:53.470+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T14:17:53.470+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:17:53.471+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T14:17:53.478+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-01T14:18:59.277+0530 INFO Starting CamApiInterfaceApplication v0.0.1-SNAPSHOT using Java 17.0.7 with PID 10819 (/home/bharath/Downloads/cam-api-interface/target/cam-api-interface-0.0.1-SNAPSHOT.jar started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-01T14:18:59.281+0530 INFO The following 1 profile is active: "snapp"
+2024-03-01T14:19:00.629+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:19:00.805+0530 INFO Finished Spring Data repository scanning in 151 ms. Found 8 JPA repository interfaces.
+2024-03-01T14:19:00.807+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:19:00.813+0530 INFO Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interfaces.
+2024-03-01T14:19:02.892+0530 INFO Tomcat initialized with port(s): 8088 (http)
+2024-03-01T14:19:02.900+0530 INFO Initializing ProtocolHandler ["http-nio-8088"]
+2024-03-01T14:19:02.904+0530 INFO Starting service [Tomcat]
+2024-03-01T14:19:02.904+0530 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2024-03-01T14:19:03.158+0530 INFO Initializing Spring embedded WebApplicationContext
+2024-03-01T14:19:03.161+0530 INFO Root WebApplicationContext: initialization completed in 3704 ms
+2024-03-01T14:19:03.508+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-01T14:19:03.782+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-01T14:19:03.786+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-01T14:19:04.762+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:19:04.907+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:19:04.934+0530 INFO HikariPool-1 - Starting...
+2024-03-01T14:19:07.900+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58f437b0
+2024-03-01T14:19:07.905+0530 INFO HikariPool-1 - Start completed.
+2024-03-01T14:19:08.368+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:19:09.116+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:19:09.121+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:19:09.146+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-01T14:19:09.248+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:19:09.249+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:19:09.250+0530 INFO HikariPool-2 - Starting...
+2024-03-01T14:19:11.269+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f03ee8f
+2024-03-01T14:19:11.270+0530 INFO HikariPool-2 - Start completed.
+2024-03-01T14:19:11.422+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:19:11.445+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:19:11.446+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:19:12.199+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-01T14:19:12.799+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T14:19:13.223+0530 INFO Starting ProtocolHandler ["http-nio-8088"]
+2024-03-01T14:19:13.282+0530 INFO Tomcat started on port(s): 8088 (http) with context path ''
+2024-03-01T14:19:13.330+0530 INFO Started CamApiInterfaceApplication in 15.174 seconds (process running for 18.275)
+2024-03-01T14:19:19.823+0530 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01T14:19:19.823+0530 INFO Initializing Servlet 'dispatcherServlet'
+2024-03-01T14:19:19.825+0530 INFO Completed initialization in 1 ms
+2024-03-01T14:19:19.966+0530 INFO httpMethod = POST
+2024-03-01T14:19:19.966+0530 INFO protocol = https
+2024-03-01T14:19:19.967+0530 INFO hostName = localhost
+2024-03-01T14:19:19.967+0530 INFO hostPort = 443
+2024-03-01T14:19:19.967+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T14:19:19.968+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:19:19.968+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:19:19.968+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709282836781
+2024-03-01T14:19:20.012+0530 INFO authString = HntPJwj1nOvxJ0DH8WgXi/t0sR6cMI0RLi69hWGyu+k=
+2024-03-01T14:19:20.013+0530 INFO authHeader = HntPJwj1nOvxJ0DH8WgXi/t0sR6cMI0RLi69hWGyu+k=
+2024-03-01T14:19:20.020+0530 INFO parameters = Request [userId=null, Operations=null, filter=, startIndex=1, itemsPerPage=5, ascOrderBy=, descOrderBy=, groupId=null]
+2024-03-01T14:37:58.358+0530 INFO Could not detect default configuration classes for test class [com.e2s.cam.CamApiInterfaceApplicationTests]: CamApiInterfaceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-03-01T14:37:58.562+0530 INFO Found @SpringBootConfiguration com.e2s.cam.CamApiInterfaceApplication for test class com.e2s.cam.CamApiInterfaceApplicationTests
+2024-03-01T14:37:59.482+0530 WARN 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/home/bharath/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/home/bharath/.m2/repository/org/json/json/20210307/json-20210307.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-03-01T14:37:59.540+0530 INFO Starting CamApiInterfaceApplicationTests using Java 17.0.1 with PID 11550 (started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-01T14:37:59.542+0530 INFO No active profile set, falling back to 1 default profile: "default"
+2024-03-01T14:38:01.070+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:38:01.124+0530 INFO Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interfaces.
+2024-03-01T14:38:01.126+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:38:01.155+0530 INFO Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2024-03-01T14:38:02.494+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-01T14:38:02.625+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-01T14:38:02.628+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-01T14:38:02.999+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:38:03.315+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:38:03.336+0530 INFO HikariPool-1 - Starting...
+2024-03-01T14:38:06.449+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45e639ee
+2024-03-01T14:38:06.453+0530 INFO HikariPool-1 - Start completed.
+2024-03-01T14:38:06.979+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:38:08.509+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:38:08.513+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:38:08.535+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-01T14:38:08.541+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:38:08.542+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:38:08.542+0530 INFO HikariPool-2 - Starting...
+2024-03-01T14:38:10.552+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51097500
+2024-03-01T14:38:10.553+0530 INFO HikariPool-2 - Start completed.
+2024-03-01T14:38:10.735+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:38:10.877+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:38:10.878+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:38:11.828+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-01T14:38:12.900+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T14:38:13.400+0530 INFO Started CamApiInterfaceApplicationTests in 14.338 seconds (process running for 16.929)
+2024-03-01T14:38:14.263+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:38:14.265+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:38:14.266+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T14:38:15.239+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-01T14:38:15.240+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-01T14:38:15.870+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T14:39:15.110+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:39:15.111+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-01T14:39:15.137+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T14:39:15.137+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:39:15.138+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T14:39:15.143+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-01T14:41:07.256+0530 INFO Starting CamApiInterfaceApplication v0.0.1-SNAPSHOT using Java 17.0.7 with PID 11746 (/home/bharath/Downloads/cam-api-interface/target/cam-api-interface-0.0.1-SNAPSHOT.jar started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-01T14:41:07.259+0530 INFO The following 1 profile is active: "snapp"
+2024-03-01T14:41:07.935+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:41:08.034+0530 INFO Finished Spring Data repository scanning in 88 ms. Found 8 JPA repository interfaces.
+2024-03-01T14:41:08.036+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T14:41:08.044+0530 INFO Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interfaces.
+2024-03-01T14:41:09.365+0530 INFO Tomcat initialized with port(s): 8088 (http)
+2024-03-01T14:41:09.375+0530 INFO Initializing ProtocolHandler ["http-nio-8088"]
+2024-03-01T14:41:09.379+0530 INFO Starting service [Tomcat]
+2024-03-01T14:41:09.380+0530 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2024-03-01T14:41:09.552+0530 INFO Initializing Spring embedded WebApplicationContext
+2024-03-01T14:41:09.555+0530 INFO Root WebApplicationContext: initialization completed in 2212 ms
+2024-03-01T14:41:09.758+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-01T14:41:09.832+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-01T14:41:09.835+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-01T14:41:10.214+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:41:10.386+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:41:10.412+0530 INFO HikariPool-1 - Starting...
+2024-03-01T14:41:13.205+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f50b680
+2024-03-01T14:41:13.211+0530 INFO HikariPool-1 - Start completed.
+2024-03-01T14:41:13.646+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:41:14.449+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:41:14.453+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T14:41:14.479+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-01T14:41:14.583+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:41:14.583+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T14:41:14.584+0530 INFO HikariPool-2 - Starting...
+2024-03-01T14:41:16.581+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e2c6702
+2024-03-01T14:41:16.581+0530 INFO HikariPool-2 - Start completed.
+2024-03-01T14:41:16.733+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-01T14:41:16.754+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-01T14:41:16.754+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-01T14:41:17.531+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-01T14:41:18.192+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T14:41:18.656+0530 INFO Starting ProtocolHandler ["http-nio-8088"]
+2024-03-01T14:41:18.724+0530 INFO Tomcat started on port(s): 8088 (http) with context path ''
+2024-03-01T14:41:18.821+0530 INFO Started CamApiInterfaceApplication in 11.988 seconds (process running for 13.52)
+2024-03-01T14:41:22.707+0530 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01T14:41:22.707+0530 INFO Initializing Servlet 'dispatcherServlet'
+2024-03-01T14:41:22.708+0530 INFO Completed initialization in 1 ms
+2024-03-01T14:41:22.845+0530 INFO test logger
+2024-03-01T14:41:22.846+0530 INFO httpMethod = POST
+2024-03-01T14:41:22.846+0530 INFO protocol = https
+2024-03-01T14:41:22.846+0530 INFO hostName = localhost
+2024-03-01T14:41:22.846+0530 INFO hostPort = 443
+2024-03-01T14:41:22.847+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T14:41:22.847+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709283460394
+2024-03-01T14:41:22.860+0530 INFO test logger
+2024-03-01T14:41:26.376+0530 ERROR Unauthorised Request: Invalid request date time
+2024-03-01T14:41:26.377+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@7325b40
+2024-03-01T14:41:44.102+0530 INFO accessID 7TJFUQ7ON623WXL0
+2024-03-01T14:41:44.103+0530 INFO accessID 27tJfuQ7on623Wxl0
+2024-03-01T14:41:44.103+0530 ERROR Unauthorised Request: Invalid account ID
+2024-03-01T14:41:44.103+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@54e5fc79
+2024-03-01T14:42:06.147+0530 INFO accessID 7TJFUQ7ON623WXL0
+2024-03-01T14:42:06.147+0530 INFO accessID 27TJFUQ7ON623WXL0
+2024-03-01T14:42:06.149+0530 INFO httpMethod = POST
+2024-03-01T14:42:06.149+0530 INFO protocol = https
+2024-03-01T14:42:06.150+0530 INFO hostName = localhost
+2024-03-01T14:42:06.150+0530 INFO hostPort = 443
+2024-03-01T14:42:06.150+0530 INFO requestURI = /users/findbycriteria
+2024-03-01T14:42:06.150+0530 INFO parameters = accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709284293614
+2024-03-01T14:42:06.151+0530 INFO combinedStringPOST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709284293614
+2024-03-01T14:42:06.151+0530 INFO combinedString = POST&https://localhost/users/findbycriteria?accountid=7tjfuq7on623wxl0&nonce=3234566556&ts=1709284293614
+2024-03-01T14:42:06.151+0530 INFO authString = 861c652n/xPqhcfjbGW24Mi2sLgOVtRrfMB0umSPq5o=
+2024-03-01T14:42:06.151+0530 INFO authHeader = l8HXvh8ZSCGHRcMHf47nrPZ1Wc0pNxpCp5R+hAFZEIE=
+2024-03-01T14:42:06.152+0530 ERROR Unauthorised Request
+2024-03-01T14:42:06.152+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@6118d7
+2024-03-01T15:46:15.358+0530 ERROR Unauthorised Request: Invalid request date time
+2024-03-01T15:46:15.358+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@4160aa4e
+2024-03-01T15:46:17.814+0530 ERROR Unauthorised Request: Invalid request date time
+2024-03-01T15:46:17.815+0530 ERROR com.e2s.cam.module.ErrorResponseMessage@de00400

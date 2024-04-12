@@ -57,7 +57,8 @@ public class UserController {
 	@SCIMAuthorization
 	public void deleteUser(@RequestBody Request request) {
 		logger.info("parameters = " + request);
-		service.deleteUser(request.getUserId());
+		service.updateByStaffId(request.getUserId(),"false");
+//		service.deleteUser(request.getUserId());
 	}
 
 	@GetMapping("/test")

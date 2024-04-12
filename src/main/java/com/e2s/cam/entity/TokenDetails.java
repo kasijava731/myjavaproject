@@ -6,7 +6,15 @@ public class TokenDetails {
 	String httpMethod;
 	String url;
 	Map<String, String> params;
+	private String hostName;
 	
+	
+	public String getHostName() {
+		return hostName;
+	}
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+	}
 	public String getHttpMethod() {
 		return httpMethod;
 	}

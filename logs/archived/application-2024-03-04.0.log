@@ -1,0 +1,6 @@
+2024-03-04T10:23:21.348+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-04T10:23:21.426+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-04T10:23:21.475+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-04T10:23:21.475+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-04T10:23:21.476+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-04T10:23:21.479+0530 INFO HikariPool-1 - Shutdown completed.
