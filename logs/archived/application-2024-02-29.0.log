@@ -1,0 +1,6 @@
+2024-03-01T12:22:45.342+0530 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23h54m25s630ms912µs98ns).
+2024-03-01T12:22:45.352+0530 WARN Timed-out waiting for add connection executor to shutdown
+2024-03-01T12:22:45.537+0530 INFO HikariPool-2 - Shutdown completed.
+2024-03-01T12:22:45.539+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-01T12:22:45.540+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-01T12:22:47.302+0530 INFO HikariPool-1 - Shutdown completed.

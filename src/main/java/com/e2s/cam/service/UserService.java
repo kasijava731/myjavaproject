@@ -9,7 +9,6 @@ import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -19,7 +18,6 @@ import org.springframework.stereotype.Service;
 import com.e2s.cam.Error.UserNotFoundException;
 import com.e2s.cam.entity.CommunityUserProfiles;
 import com.e2s.cam.entity.GroupDetails;
-import com.e2s.cam.entity.GroupEntity;
 import com.e2s.cam.entity.Staff;
 import com.e2s.cam.entity.UserEntity;
 import com.e2s.cam.repository.CommunityUserProfilesRepository;
@@ -27,6 +25,7 @@ import com.e2s.cam.repository.GroupDetailsRepository;
 import com.e2s.cam.repository.GroupRepository;
 import com.e2s.cam.repository.StaffRepository;
 import com.e2s.cam.repository.UserRepository;
+import com.e2s.cam.repository.UserRolesRepository;
 import com.e2s.cam.request.Request;
 import com.e2s.cam.response.Emails;
 import com.e2s.cam.response.Groups;
@@ -51,6 +50,9 @@ public class UserService {
 
 	@Autowired
 	private UsersRepository usersRepository;
+	
+	@Autowired
+	private UserRolesRepository userRolesRepository;
 
 	@Autowired
 	private CommunityUserProfilesRepository communityUserProfilesRepository;
@@ -200,6 +202,9 @@ public class UserService {
 		System.out.println("comm saves "+staff);
 		usersRepository.updateName(orgId,id,getStatus(Status));
 		System.out.println("users saves "+staff);
+		 if (Objects.equals(Status, "false")) {
+			 userRolesRepository.deleteByUserId(userDetails.getUserId());
+			}
 		return constructResponse(userDetails);
 
 	}

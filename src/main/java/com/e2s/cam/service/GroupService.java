@@ -1,12 +1,9 @@
 package com.e2s.cam.service;
 
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.TimeZone;
@@ -14,8 +11,6 @@ import java.util.TimeZone;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -25,7 +20,6 @@ import com.e2s.cam.entity.GroupEntity;
 import com.e2s.cam.entity.Roles;
 import com.e2s.cam.entity.UserEntity;
 import com.e2s.cam.entity.UserRoles;
-import com.e2s.cam.module.SCIMAuthorizationAspect;
 import com.e2s.cam.repository.GroupRepository;
 import com.e2s.cam.repository.RoleRepository;
 import com.e2s.cam.repository.UserRepository;
@@ -36,8 +30,6 @@ import com.e2s.cam.response.GroupResponse;
 import com.e2s.cam.response.ListResponse;
 import com.e2s.cam.response.Member;
 import com.e2s.cam.response.Meta;
-import com.e2s.cam.usersRepository.UsersRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class GroupService {

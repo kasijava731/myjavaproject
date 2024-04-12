@@ -1,0 +1,47 @@
+2024-03-27T18:32:48.641+0530 INFO Starting CamApiInterfaceApplication using Java 17.0.1 with PID 8352 (/home/bharath/Downloads/cam-api-interface/target/classes started by bharath in /home/bharath/Downloads/cam-api-interface)
+2024-03-27T18:32:48.646+0530 INFO No active profile set, falling back to 1 default profile: "default"
+2024-03-27T18:32:49.882+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27T18:32:49.931+0530 INFO Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2024-03-27T18:32:49.932+0530 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27T18:32:49.954+0530 INFO Finished Spring Data repository scanning in 21 ms. Found 8 JPA repository interfaces.
+2024-03-27T18:32:51.100+0530 INFO Tomcat initialized with port(s): 8087 (http)
+2024-03-27T18:32:51.112+0530 INFO Initializing ProtocolHandler ["http-nio-8087"]
+2024-03-27T18:32:51.114+0530 INFO Starting service [Tomcat]
+2024-03-27T18:32:51.114+0530 INFO Starting Servlet engine: [Apache Tomcat/10.1.10]
+2024-03-27T18:32:51.202+0530 INFO Initializing Spring embedded WebApplicationContext
+2024-03-27T18:32:51.202+0530 INFO Root WebApplicationContext: initialization completed in 2437 ms
+2024-03-27T18:32:51.534+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: authentication]
+2024-03-27T18:32:51.644+0530 INFO HHH000412: Hibernate ORM core version 6.2.5.Final
+2024-03-27T18:32:51.654+0530 INFO HHH000406: Using bytecode reflection optimizer
+2024-03-27T18:32:51.956+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-27T18:32:52.266+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27T18:32:52.297+0530 INFO HikariPool-1 - Starting...
+2024-03-27T18:32:55.239+0530 INFO HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f6f65a4
+2024-03-27T18:32:55.243+0530 INFO HikariPool-1 - Start completed.
+2024-03-27T18:32:55.777+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-27T18:32:56.629+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-27T18:32:56.632+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-27T18:32:56.641+0530 INFO HHH000204: Processing PersistenceUnitInfo [name: proretention-7]
+2024-03-27T18:32:56.660+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-27T18:32:56.660+0530 INFO No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27T18:32:56.661+0530 INFO HikariPool-2 - Starting...
+2024-03-27T18:32:59.169+0530 INFO HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ec176da
+2024-03-27T18:32:59.169+0530 INFO HikariPool-2 - Start completed.
+2024-03-27T18:32:59.376+0530 INFO HHH000021: Bytecode provider name : bytebuddy
+2024-03-27T18:32:59.495+0530 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-27T18:32:59.496+0530 INFO Initialized JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-27T18:33:00.348+0530 INFO Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-27T18:33:00.918+0530 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-27T18:33:01.331+0530 INFO Starting ProtocolHandler ["http-nio-8087"]
+2024-03-27T18:33:01.344+0530 INFO Tomcat started on port(s): 8087 (http) with context path ''
+2024-03-27T18:33:01.352+0530 INFO Started CamApiInterfaceApplication in 13.57 seconds (process running for 14.918)
+2024-03-27T18:35:34.284+0530 INFO Application shutdown requested.
+2024-03-27T18:35:34.289+0530 INFO Pausing ProtocolHandler ["http-nio-8087"]
+2024-03-27T18:35:34.290+0530 INFO Stopping service [Tomcat]
+2024-03-27T18:35:34.294+0530 INFO Stopping ProtocolHandler ["http-nio-8087"]
+2024-03-27T18:35:34.301+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'proretention-7'
+2024-03-27T18:35:34.302+0530 INFO Closing JPA EntityManagerFactory for persistence unit 'authentication'
+2024-03-27T18:35:34.302+0530 INFO HikariPool-1 - Shutdown initiated...
+2024-03-27T18:35:34.307+0530 INFO HikariPool-1 - Shutdown completed.
+2024-03-27T18:35:34.308+0530 INFO HikariPool-2 - Shutdown initiated...
+2024-03-27T18:35:34.313+0530 INFO HikariPool-2 - Shutdown completed.

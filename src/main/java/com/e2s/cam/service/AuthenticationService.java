@@ -16,7 +16,6 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -27,10 +26,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.e2s.cam.Error.ErrorResponses;
 import com.e2s.cam.Error.UnAuthorizedException;
-import com.e2s.cam.controller.AuthenticationController;
 import com.e2s.cam.entity.TokenDetails;
-import com.e2s.cam.module.ErrorResponse;
-import com.e2s.cam.module.ErrorResponseMessage;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -43,7 +39,7 @@ public class AuthenticationService {
 	private static final String SECRET_KEY = "123456";
 	String accessID="24km8bjqinulx6av";
 	
-	static String secretKey="OSL5WDCPXU6QANEJ";
+	static String secretKey="8TQLUU7QUKIDYHDM";
 	
 	@Value("${SCIM.API.RequestExpiry}")	// in seconds
 	long requestExpiryGracePeriod;	
@@ -66,17 +62,17 @@ public class AuthenticationService {
 //		params.put("accountid", "123456");
 		System.out.println("params " + params);
 
-		String authToken = generateAuthToken(httpMethod, url, params,request);
+		String authToken = generateAuthToken(tokenDetails.getHostName(),httpMethod, url, params,request);
 
 		System.out.println("Generated Auth Token: " + authToken);
 		return authToken;
 	}
 
-	public static String generateAuthToken(String httpMethod1, String url, Map<String, String> params,HttpServletRequest request) {
+	public static String generateAuthToken(String hostName1,String httpMethod1, String url, Map<String, String> params,HttpServletRequest request) {
 		
 		String httpMethod = request.getMethod().toUpperCase();
 //		String protocol = request.getScheme().toLowerCase();
-		String hostName = "cam-uat.engage2serve.com";
+		String hostName = hostName1;
 //		String hostPort = request.getServerPort() + "";
 		String protocol = "https";
 		String hostPort =  "443";
