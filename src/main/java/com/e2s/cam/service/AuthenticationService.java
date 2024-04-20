@@ -38,8 +38,8 @@ public class AuthenticationService {
 
 	private static final String SECRET_KEY = "123456";
 	String accessID="24km8bjqinulx6av";
-	
-	static String secretKey="8TQLUU7QUKIDYHDM";
+	@Value("${SCIM.API.SecretKey}")
+	static String secretKey;
 	
 	@Value("${SCIM.API.RequestExpiry}")	// in seconds
 	long requestExpiryGracePeriod;	
