@@ -62,13 +62,13 @@ public class AuthenticationService {
 //		params.put("accountid", "123456");
 		System.out.println("params " + params);
 
-		String authToken = generateAuthToken(tokenDetails.getHostName(),httpMethod, url, params,request);
+		String authToken = generateAuthToken(tokenDetails.getHostName(),httpMethod, url, params,request,tokenDetails.getSecretKey().getBytes());
 
 		System.out.println("Generated Auth Token: " + authToken);
 		return authToken;
 	}
 
-	public static String generateAuthToken(String hostName1,String httpMethod1, String url, Map<String, String> params,HttpServletRequest request) {
+	public static String generateAuthToken(String hostName1,String httpMethod1, String url, Map<String, String> params,HttpServletRequest request, String secretKey) {
 		
 		String httpMethod = request.getMethod().toUpperCase();
 //		String protocol = request.getScheme().toLowerCase();
