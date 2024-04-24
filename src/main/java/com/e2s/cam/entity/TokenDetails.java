@@ -7,8 +7,16 @@ public class TokenDetails {
 	String url;
 	Map<String, String> params;
 	private String hostName;
+	private String secretKey;
 	
 	
+	
+	public String getSecretKey() {
+		return secretKey;
+	}
+	public void setSecretKey(String secretKey) {
+		this.secretKey = secretKey;
+	}
 	public String getHostName() {
 		return hostName;
 	}
