@@ -62,7 +62,7 @@ public class AuthenticationService {
 //		params.put("accountid", "123456");
 		System.out.println("params " + params);
 
-		String authToken = generateAuthToken(tokenDetails.getHostName(),httpMethod, url, params,request,tokenDetails.getSecretKey().getBytes());
+		String authToken = generateAuthToken(tokenDetails.getHostName(),httpMethod, url, params,request,tokenDetails.getSecretKey());
 
 		System.out.println("Generated Auth Token: " + authToken);
 		return authToken;
@@ -91,6 +91,7 @@ public class AuthenticationService {
 		
 		String combinedString = String.format("%s&%s://%s%s?%s", httpMethod, protocol,hostName,requestURI,parameters);
 		System.out.print("combinedString" +combinedString);
+		logger.info("combinedString " + combinedString);
 		try {
 			SecretKeySpec signingKey = new SecretKeySpec(secretKey.getBytes(), "HMACSHA256");
 			
