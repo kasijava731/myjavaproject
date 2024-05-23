@@ -122,8 +122,8 @@ public class User {
 	@JsonProperty("urn:ietf:params:scim:schemas:extension:cam:2.0:User")
 	public UserExtension getExtension() {
 		UserExtension userEx=new UserExtension();
-		userEx.setIsPrivileged("");
-		userEx.setLastLogin("True");
+		userEx.setIsPrivileged("True");
+		userEx.setLastLogin("");
 		userEx.setLastPasswordChanged("");
 		return userEx;
 	}
