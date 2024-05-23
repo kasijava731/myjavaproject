@@ -123,7 +123,7 @@ public class User {
 	public UserExtension getExtension() {
 		UserExtension userEx=new UserExtension();
 		userEx.setIsPrivileged("");
-		userEx.setLastLogin("");
+		userEx.setLastLogin("True");
 		userEx.setLastPasswordChanged("");
 		return userEx;
 	}
