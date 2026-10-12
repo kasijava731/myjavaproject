@@ -16,4 +16,6 @@ public class CamController {
 		  return "authenticated successfully";
 	  }
 
+	  //clearcode
+
 }
